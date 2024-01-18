@@ -1,51 +1,73 @@
-.grid {
-    background-color: bisque;
-    height: 40vh;
-    /* display: grid; */
-    /* grid-template-columns: 200px 200px 200px; */
+body {
+    overflow-x: hidden;
+    margin: 0;
+}
+
+header{
+    background-color: lightskyblue;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+
+main {
     display: grid;
-    margin-bottom: 10px;
     grid-template-areas:
-        "two    three   five"
-        "one    one     five"
-        "one    one     five"
-        "four   .       five";
+        "content content sidebar";
 }
 
-.flex {
-    background-color: coral;
-    height: 50vh;
+.content {
+    grid-area: content;
+    margin: 10px;
+    overflow-y: scroll;
+    height: 250px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    margin: 10px;
+}
+
+.article {
+    margin-bottom: 25px;
+    padding: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    flex-grow: 1;
+}
+
+#icon {
+    height: 50px;
+    width: auto;
+}
+
+.title {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.links > a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid gray;
     
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-grow: 1;
+    height: 100%;
 }
 
-.one {
-    grid-area: one;
-    background-color: cyan;
-}
-
-.two {
-    grid-area: two;
-    background-color: greenyellow;
-
-}
-
-.three {
-    grid-area: three;
-    background-color: darkslateblue;
-
-
-}
-
-.four {
-    grid-area: four;
-    background-color: cornflowerblue;
-
-
-}
-
-.five {
-    grid-area: five;
-    background-color: lightsalmon;
-
-
+.links > a:hover {
+    background-color: lightblue;
 }
